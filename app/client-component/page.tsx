@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/router";
 import { use } from "react";
 
 //Example copied from the Next.js 13 Docs
@@ -11,8 +12,19 @@ async function getData() {
   return res.json();
 }
 
-export default async function Page() {
-  const name = use(getData());
+export default function Page() {
+  // const name = use(getData());
 
-  return <div>Hello from client!</div>;
+  const router = useRouter();
+
+  const goBackHome = () => {
+    router.push("/");
+  };
+
+  return (
+    <div>
+      <h1>Hello from client!</h1>
+      <button onClick={goBackHome}>Back home</button>
+    </div>
+  );
 }
