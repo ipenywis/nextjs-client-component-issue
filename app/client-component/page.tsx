@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { use } from "react";
 
 //Example copied from the Next.js 13 Docs
