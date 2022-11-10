@@ -13,7 +13,7 @@ async function getData() {
 }
 
 export default function Page() {
-  // const name = use(getData());
+  const posts = use(getData());
 
   const router = useRouter();
 
@@ -24,6 +24,7 @@ export default function Page() {
   return (
     <div>
       <h1>Hello from client!</h1>
+      <p>Post: {posts && posts[0].title}</p>
       <button onClick={goBackHome}>Back home</button>
     </div>
   );
